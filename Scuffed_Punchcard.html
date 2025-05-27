@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scuffed Punchcard</title>
+  <style>
+    
+    span {
+      position:absolute;
+      background-color:transparent;
+      color: yellow;
+      font-size: small;
+      bottom: 3%;
+      right: 65%;
+      text-align: left;
+    }
+    
+    h2 {
+      color: yellow;
+    }
+     h1 {
+      color: Gold;
+       text-align: center;
+       font-size: 60px;
+       text-shadow: -2px -2px 0 black, 2px -2px 0 Black, -2px 2px 0 Black, 2px 2px 0 Black;
+    }
+    
+    body {
+      width: 100vw;
+      height: 100vh;
+      background-size: cover;
+      background-image: url('https://i.imgur.com/PoqJYdu.jpeg');
+      background-attachment: fixed;
+    }
+    
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 50px;
+      max-width: 700px;
+      margin: 50px auto;
+      text-align: center;
+    }
+
+    .grid-container > .image-container:first-child {
+      grid-column: span 3;
+      max-width: 200px;
+      margin: 0 auto;
+    }
+
+    .image-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background-color: transparent;
+      overflow: hidden;
+      border-radius: 12px;
+      cursor: pointer;
+      text-align: center;
+      
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+      transition: filter 0.3s ease, grayscale 0.3s ease;
+    }
+
+    .down-arrow {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid white;
+      z-index: 1;
+    }
+
+    .red-x {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: red;
+      font-size: 250px;
+      font-weight: bold;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .dimmed img {
+      filter: brightness(10%) grayscale(90%);
+    }
+
+    .dimmed .red-x {
+      display: block;
+    }
+
+    @media (max-width: 500px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+      }
+
+      .image-container {
+        max-width: 100%;
+        border-radius: 8px;
+      }
+
+      .down-arrow {
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 8px solid black;
+      }
+    }
+  </style>
+  <script>
+    function toggleDimmed(event) {
+      const container = event.currentTarget;
+      container.classList.toggle('dimmed');
+    }
+  </script>
+</head>
+<body>
+  <div><h1>SCUFFED PUNCHCARD</h1></div>
+  <div class="grid-container">
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 1</span>
+      <img src="https://i.imgur.com/7UXOE2h.jpeg" alt="1 LMS Win" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 2</span>
+      <img src="https://i.imgur.com/IrU1pX1.jpeg" alt="Venator Shard" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 2</span>
+      <img src="https://i.imgur.com/1nqIm9R.jpeg" alt="DK Rings" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+     <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 2</span>
+      <img src="https://i.imgur.com/dG25HAS.jpeg" alt="Enhanced or Armor Seed" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 3</span>
+      <img src="https://i.imgur.com/n2BDHZd.jpeg" alt="Any OG Godwars Hilt" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 3</span>
+      <img src="https://i.imgur.com/QDSZu8t.jpeg" alt="Black Mask" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 3</span>
+      <img src="https://i.imgur.com/yYOY0AO.jpeg" alt="Any Corp Unique" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 4</span>
+      <img src="https://i.imgur.com/t0Q3Spj.jpeg" alt="Royal Titans Crown Piece" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 4</span>
+      <img src="https://i.imgur.com/4GuOB6Z.jpeg" alt="Tormented Synapse" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 4</span>
+      <img src="https://i.imgur.com/BnlwUD8.jpeg" alt="Blood Shard" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 5</span>
+      <img src="https://i.imgur.com/1c2QxXx.jpeg" alt="Any Cerb Crystal/Stone" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 5</span>
+      <img src="https://i.imgur.com/BThIQs1.jpeg" alt="Dragon Pickaxe" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 5</span>
+      <img src="https://i.imgur.com/vKuYJSr.jpeg" alt="Any 4 Barrows Uniques" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+  </div>
+  <div class="grid-container">
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 6</span>
+      <img src="https://i.imgur.com/XgbBoD2.jpeg" alt="Any Raid Purple" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 7</span>
+      <img src="https://i.imgur.com/wyXmh21.jpeg" alt="Lightbearer" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 7</span>
+      <img src="https://i.imgur.com/8byJg2w.jpeg" alt="Dex or Arcane" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 7</span>
+      <img src="https://i.imgur.com/UV3V3p0.jpeg" alt="Avernic Defender" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 8</span>
+      <img src="https://i.imgur.com/yd6I4HH.jpeg" alt="Sulphur Blades" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 8</span>
+      <img src="https://i.imgur.com/zx9A83l.jpeg" alt="Warped Sceptre" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 8</span>
+      <img src="https://i.imgur.com/yKPCKvy.jpeg" alt="Glacial Temotli" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 9</span>
+      <img src="https://i.imgur.com/ig1RoaW.jpeg" alt="Araxxor Fang" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 9</span>
+      <img src="https://i.imgur.com/bX5oIgs.jpeg" alt="Uncut Onyx" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 9</span>
+      <img src="https://i.imgur.com/Vj6fBuF.jpeg" alt="x2 Zenyte Shards" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+  </div>
+    <div class="grid-container">
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 10</span>
+      <img src="https://i.imgur.com/y7ORGpE.jpeg" alt="Crystal Grail" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 11</span>
+      <img src="https://i.imgur.com/hJjgaS0.jpeg" alt="Gnome Scarf" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 11</span>
+      <img src="https://i.imgur.com/Y4x7ndr.jpeg" alt="Broken Zombie Axe" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 11</span>
+      <img src="https://i.imgur.com/Dy9Rncp.jpeg" alt="Any Hunters Guild Piece" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 12</span>
+      <img src="https://i.imgur.com/vFRMbbc.jpeg" alt="Full Noxious Halberd" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 12</span>
+      <img src="https://i.imgur.com/JCm7F1u.jpeg" alt="Any Nex Unique" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 12</span>
+      <img src="https://i.imgur.com/NeN5QuI.jpeg" alt="Any Virtus Piece" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 13</span>
+      <img src="https://i.imgur.com/A1Cg3tK.jpeg" alt="Merfolk Trident" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 13</span>
+      <img src="https://i.imgur.com/bEEoKqh.jpeg" alt="Broken Zombie Helmet" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 13</span>
+      <img src="https://i.imgur.com/3i7iSae.jpeg" alt="Scurrius Spine" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+  </div>
+  <div class="grid-container">
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 14</span>
+      <img src="https://i.imgur.com/NM8L4Lc.jpeg" alt="Vorkath, KBD & KQ Heads" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 15</span>
+      <img src="https://i.imgur.com/BOpbvxg.jpeg" alt="Crystal Tool Seed" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 15</span>
+      <img src="https://i.imgur.com/mMASHGG.jpeg" alt="Dragon Warhammer" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 15</span>
+      <img src="https://i.imgur.com/qqItjPx.jpeg" alt="Any GOTR Dye" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+  </div>
+   <div class="grid-container">
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 16</span>
+      <img src="https://i.imgur.com/U8Kb0iI.jpeg" alt="Any Oathplate or Horn" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+  </div>
+  <div class="grid-container">
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 17</span>
+      <img src="https://i.imgur.com/dcp5lDM.jpeg" alt="Sub 22min DS1 Speedrun" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+  </div>
+    <div class="grid-container">
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 18</span>
+      <img src="https://i.imgur.com/D9gkUeu.jpeg" alt="Sub 6:30 Hallowed Sepulchre" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 19</span>
+      <img src="https://i.imgur.com/Q4TrpWq.jpeg" alt="Any NM Unique" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 19</span>
+      <img src="https://i.imgur.com/xWrw5lC.jpeg" alt="Any OG GWD Armor" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 19</span>
+      <img src="https://i.imgur.com/8j6SC5z.jpeg" alt="Hydra Leather" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 20</span>
+      <img src="https://i.imgur.com/qq87BAS.jpeg" alt="Osmumtens Fang" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 20</span>
+      <img src="https://i.imgur.com/37M7jHY.jpeg" alt="10 Colosseum KC" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 20</span>
+      <img src="https://i.imgur.com/chOKvGV.jpeg" alt="15 LMS Wins" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 21</span>
+      <img src="https://i.imgur.com/BJmyjm9.jpeg" alt="Full Moons Armor" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 21</span>
+      <img src="https://i.imgur.com/120rJsj.jpeg" alt="3 Inferno KC" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 21</span>
+      <img src="https://i.imgur.com/ZiKeI9X.jpeg" alt="Any Rev Weapon" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 22</span>
+      <img src="https://i.imgur.com/yGnHP6C.jpeg" alt="Any Masori Piece" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 22</span>
+      <img src="https://i.imgur.com/tGrsXD8.jpeg" alt="Any Justiciars Piece" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 22</span>
+      <img src="https://i.imgur.com/VFWXBtF.jpeg" alt="Any Ancestral Piece" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 23</span>
+      <img src="https://i.imgur.com/s6y4lbb.jpeg" alt="Abyssal Whip" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 23</span>
+      <img src="https://i.imgur.com/qkmZEQy.jpeg" alt="Aranea Boots" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 23</span>
+      <img src="https://i.imgur.com/J9oABNN.jpeg" alt="Dark Bow" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+  </div>
+   <div class="grid-container">
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 24</span>
+      <img src="https://i.imgur.com/egXNNtr.jpeg" alt="Kill 1 Awakened DT2 Boss" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+  </div>
+<div class="grid-container">
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 25</span>
+      <img src="https://i.imgur.com/fanqvzF.jpeg" alt="Granite Helm BA ONLY" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 26</span>
+      <img src="https://i.imgur.com/Gi3AZ55.jpeg" alt="Mask of Ranul" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 26</span>
+      <img src="https://i.imgur.com/5mn29CL.jpeg" alt="Soul Cape" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 26</span>
+      <img src="https://i.imgur.com/dfUp2AW.jpeg" alt="Ring of Endurance" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 27</span>
+      <img src="https://i.imgur.com/cY2fgrm.jpeg" alt="Complete Odium Ward" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 27</span>
+      <img src="https://i.imgur.com/g3SirVm.jpeg" alt="Complete Madediction Ward" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 27</span>
+      <img src="https://i.imgur.com/B8mMxOV.jpeg" alt="Dragon Limbs" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 28</span>
+      <img src="https://i.imgur.com/vtH6twK.jpeg" alt="1.25m Mining Exp" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 28</span>
+      <img src="https://i.imgur.com/Niy8T3x.jpeg" alt="750k Runecrafting Exp" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 28</span>
+      <img src="https://i.imgur.com/nTdRI1t.jpeg" alt="4m Thieving Exp" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+  </div>
+  <div class="grid-container">
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 29</span>
+      <img src="https://i.imgur.com/3cA0ijb.jpeg" alt="TOA 500" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 30</span>
+      <img src="https://i.imgur.com/uSyyrXd.jpeg" alt="Any Blue Wizard (t)" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 30</span>
+      <img src="https://i.imgur.com/dweZlzU.jpeg" alt="Any Blue Wizard (g)" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 30</span>
+      <img src="https://i.imgur.com/VJ63mz1.jpeg" alt="Any Black Wizard (g)" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 31</span>
+      <img src="https://i.imgur.com/SY2PYxD.jpeg" alt="Crier Hat/Coat/Bell" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 31</span>
+      <img src="https://i.imgur.com/bsIgtR4.jpeg" alt="Any Cat/Penguin/Wolf Mask" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 31</span>
+      <img src="https://i.imgur.com/Vnc9Hdh.jpeg" alt="Any Lep Hat/ Wolf Cloak" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 32</span>
+      <img src="https://i.imgur.com/xjv0nQx.jpeg" alt="Any Guthix D'Hide" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 32</span>
+      <img src="https://i.imgur.com/mXlw6qo.jpeg" alt="Any Saradomin D'Hide" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 32</span>
+      <img src="https://i.imgur.com/3nBLvQH.jpeg" alt="Any Zamorak D'Hide" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+  </div>
+  <div class="grid-container">
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 33</span>
+      <img src="https://i.imgur.com/ywbQ2oY.jpeg" alt="Any Jar" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 34</span>
+      <img src="https://i.imgur.com/0K22oPU.jpeg" alt="1m Agility Exp" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 34</span>
+      <img src="https://i.imgur.com/cinGeuh.jpeg" alt="1.5m Fishing Exp" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 34</span>
+      <img src="https://i.imgur.com/dOO01rv.jpeg" alt="Granite Gloves" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 35</span>
+      <img src="https://i.imgur.com/fZI5UeF.jpeg" alt="Any Obsidian Armor" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 35</span>
+      <img src="https://i.imgur.com/nXZduXh.jpeg" alt="Sarachnis Cudgel" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 35</span>
+      <img src="https://i.imgur.com/HcflAga.jpeg" alt="Dragon Harpoon" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 36</span>
+      <img src="https://i.imgur.com/nFkLU8h.jpeg" alt="Any Sunfire Armor" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 36</span>
+      <img src="https://i.imgur.com/sq9iRoW.jpeg" alt="Eternal Glory" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 36</span>
+      <img src="https://i.imgur.com/veYv5zA.jpeg" alt="Tome of Water" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 37</span>
+      <img src="https://i.imgur.com/jG4IDTB.jpeg" alt="Mole Slippers" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 37</span>
+      <img src="https://i.imgur.com/y4TO6uc.jpeg" alt="Jester Cape" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 37</span>
+      <img src="https://i.imgur.com/F2TFwuH.jpeg" alt="Shoulder Parrot" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+  </div>
+    <div class="grid-container">
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 38</span>
+      <img src="https://i.imgur.com/g0L2v61.jpeg" alt="35 Elite Clue Caskets" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+  </div>
+  <div class="grid-container">
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 39</span>
+      <img src="https://i.imgur.com/sfv9Hwg.jpeg" alt="Complete a Full Voidwaker" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+  </div>
+  <div class="grid-container">
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 40</span>
+      <img src="https://i.imgur.com/rkP0dc1.jpeg" alt="Dharok Hydra CA" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 41</span>
+      <img src="https://i.imgur.com/27k8uuw.jpeg" alt="Kraken Tentacle" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 41</span>
+      <img src="https://i.imgur.com/FhyWQcA.jpeg" alt="Tome of Fire" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 41</span>
+      <img src="https://i.imgur.com/s9lZo85.jpeg" alt="Any Vestige" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 42</span>
+      <img src="https://i.imgur.com/iEaeSsH.jpeg" alt="Broken Dragon Pickaxe" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 42</span>
+      <img src="https://i.imgur.com/E7cIRlA.jpeg" alt="Dragon Chainbody" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 42</span>
+      <img src="https://i.imgur.com/UwszR7q.jpeg" alt="Tome of Earth" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 43</span>
+      <img src="https://i.imgur.com/Qg6ZCHX.jpeg" alt="Any Elder Chaos Robe" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 43</span>
+      <img src="https://i.imgur.com/wTFWlz5.jpeg" alt="Any SRA Piece" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 43</span>
+      <img src="https://i.imgur.com/tL8uY7d.jpeg" alt="Pharoh's Sceptre" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+  </div>
+  <div class="grid-container">
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 44</span>
+      <img src="https://i.imgur.com/EhtWF7B.jpeg" alt="But... Damage CA" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 45</span>
+      <img src="https://i.imgur.com/XAvl6Jf.jpeg" alt="Unsired" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 45</span>
+      <img src="https://i.imgur.com/KuI7qEc.jpeg" alt="Flippers" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 45</span>
+      <img src="https://i.imgur.com/3ZFviXj.jpeg" alt="Brine Sabre" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 46</span>
+      <img src="https://i.imgur.com/g6l686C.jpeg" alt="Gold Locks" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 46</span>
+      <img src="https://i.imgur.com/UB65gWu.jpeg" alt="Leaf Bladed Sword" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 46</span>
+      <img src="https://i.imgur.com/GGFJSbq.jpeg" alt="Enhanced Crystal Teleport Seed" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 47</span>
+      <img src="https://i.imgur.com/o9gk40Q.jpeg" alt="Imbued Heart or Eternal Gem" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 47</span>
+      <img src="https://i.imgur.com/PztxtMR.jpeg" alt="Dragon Full Helm" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 47</span>
+      <img src="https://i.imgur.com/Ug4HuZr.jpeg" alt="Any Zulrah Mutagen" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+  </div>
+  <div class="grid-container">
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 48</span>
+      <img src="https://i.imgur.com/5cvSA1l.jpeg" alt="COX or TOB Dust/Kit" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+  </div>
+  <div class="grid-container">
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 49</span>
+      <img src="https://i.imgur.com/Ek6WBbG.jpeg" alt="Any Big 3 Raids Megarare" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+  </div>
+  <div class="grid-container">
+    <div class="image-container" onclick="toggleDimmed(event)">
+      <span>LEVEL 50</span>
+      <img src="https://i.imgur.com/U3ucc3E.jpeg" alt="Gilded or 3rd Age" />
+      <div class="down-arrow"></div>
+      <div class="red-x">&times;</div>
+    </div>
+  </div>
+  
+<div><h2>Design by Lightfister</h2></div>
+</body>
+</html>
